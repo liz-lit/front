@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {FormsComponent} from './forms/forms.component';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,9 +12,9 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient ) { }
   public getStudents() {
-    return this.httpClient.get('http://localhost/index.php');
+    return this.httpClient.get('/api/students');
   }
-  public postData( forms: FormsComponent) {
-    return this.httpClient.post('http://localhost/index.php', forms);
+  public postData( name, login) {
+    return this.httpClient.post('/api/students', {Name: name, Login: login});
   }
 }

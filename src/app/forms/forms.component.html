@@ -1,11 +1,11 @@
-<form [formGroup]="regform">
+<form >
   <div class="form-group">
     <label for="Name">Name</label>
-    <input id = "Name" type="text" class="form-control" formControlName="Name">
+    <input id = "Name" type="text" [(ngModel)]="name" name="Name">
   </div>
   <div class="form-group">
     <label for="Login">Login</label>
-    <input id = "Login" type="text" class="form-control" formControlName="Login">
+    <input id = "Login" type="text"  [(ngModel)]="login" name="Login">
   </div>
-<input type="submit" class="btn btn-default" value="Send Request" formmethod="post">
+<input type="submit" class="btn btn-default" (click)="create()" value="Send" >
 </form>
